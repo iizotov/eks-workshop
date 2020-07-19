@@ -6,8 +6,8 @@ weight: 14
 
 -
 {{% notice info %}}
-This workshop was designed to run in the **Oregon (us-west-2)** region. **Please don't
-run in any other region.**
+Your environment today is set up  to run in the **Oregon (us-west-2)** region. **Please don't
+switch regions.**
 {{% /notice %}}
 
 
