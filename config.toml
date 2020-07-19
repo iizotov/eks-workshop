@@ -12,7 +12,7 @@ relativeURLs = true
 hrefTargetBlank = true
 
 [params]
-editURL = "https://github.com/aws-samples/eks-workshop/edit/main/content/"
+editURL = "https://github.com/iizotov/eks-workshop/edit/main/content/"
 themeVariant = "mine"
 showVisitedLinks = false
 author = "Brent Langston"
@@ -22,7 +22,7 @@ disableAssetsBusting = false
 disableLanguageSwitchingButton = true
 disableShortcutsTitle=false
 disableInlineCopyToClipBoard = true
-ghrepo = "https://github.com/aws-samples/eks-workshop/"
+ghrepo = "https://github.com/iizotov/eks-workshop/"
 branch = "main"
 template_bucket = "eksworkshop.com"
 pygmentsUseClasses = true
@@ -42,45 +42,6 @@ pygmentsStyle = "tango"
     url = "/mu/"
     weight = -110
 
-[[menu.shortcuts]]
-name = "<i class='fab fa-aws'></i> CON203"
-url = "/tags/CON203"
-weight = 1
-
-[[menu.shortcuts]]
-name = "<i class='fab fa-aws'></i> CON205"
-url = "/tags/CON205"
-weight = 2
-
-[[menu.shortcuts]]
-name = "<i class='fab fa-aws'></i> CON206"
-url = "/tags/CON206"
-weight = 3
-
-[[menu.shortcuts]]
-name = "<i class='fab fa-aws'></i> OPN401"
-url = "/tags/OPN401"
-weight = 4
-
-[[menu.shortcuts]]
-name = "<i class='fas fa-tags'></i> Tags"
-url = "/tags"
-weight = 5
-
-[[menu.shortcuts]]
-name = "<i class='fas fa-chalkboard'></i> AppMesh Workshop"
-url = "https://appmeshworkshop.com"
-weight = 6
-
-[[menu.shortcuts]]
-name = "<i class='fas fa-chalkboard'></i> ECS Workshop"
-url = "https://ecsworkshop.com"
-weight = 7
-
-[[menu.shortcuts]]
-name = "<i class='fas fa-chalkboard'></i> AWS Partner Workshops"
-url = "https://awsworkshop.io"
-weight = 8
 
 [[menu.shortcuts]]
 name = "<i class='fas fa-bookmark'></i> More Resources"

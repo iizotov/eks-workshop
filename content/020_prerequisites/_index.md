@@ -4,24 +4,24 @@ pre: "<b>   </b>"
 chapter: true
 weight: 20
 pre: '<i class="fa fa-film" aria-hidden="true"></i> '
-tags:
-  - beginner
-  - kubeflow
-  - appmesh
-  - CON203
-  - CON205
-  - CON206
-  - OPN401
 ---
 
-# Getting Started
+### Login to AWS Workshop Portal
 
-{{< youtube VXj9w6Oq1Y0 >}}
+This workshop creates an AWS account and a Cloud9 environment. You will need the **Participant Hash** provided upon entry, and your email address to track your unique session.
 
+Connect to the portal by clicking the button or browsing to [https://dashboard.eventengine.run/](https://dashboard.eventengine.run/). The following screen shows up.
 
-To start the workshop, follow one of the following depending on whether you are...
+![Event Engine](/images/event-engine-initial-screen.png)
 
-* ...[running the workshop on your own (in your own account)](self_paced/), or
-* ...[attending an AWS hosted event (using AWS provided hashes)](aws_event/)
+Enter the provided hash in the text box. The button on the bottom right corner changes to **Accept Terms & Login**. Click on that button to continue.
 
-Once you have completed with either setup, continue with [**Create a Workspace**](/020_prerequisites/workspace/)
+![Event Engine Dashboard](/images/event-engine-dashboard.png)
+
+Click on **AWS Console** on dashboard.
+
+![Event Engine AWS Console](/images/event-engine-aws-console.png)
+
+Take the defaults and click on **Open AWS Console**. This will open AWS Console in a new browser tab.
+
+Once you have completed the step above, you can head straight to [**Create a Workspace**](/020_prerequisites/workspace/)
