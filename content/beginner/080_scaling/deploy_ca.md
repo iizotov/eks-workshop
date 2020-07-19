@@ -71,8 +71,14 @@ Ensure `ROLE_NAME` is set in your environment:
 ```
 test -n "$ROLE_NAME" && echo ROLE_NAME is "$ROLE_NAME" || echo ROLE_NAME is not set
 ```
-If `ROLE_NAME` is not set, please review: [/030_eksctl/test/](/030_eksctl/test/)
+If `ROLE_NAME` is not set, please execute:
+```bash
+STACK_NAME=$(eksctl get nodegroup --cluster eksworkshop-eksctl -o json | jq -r '.[].StackName')
+ROLE_NAME=$(aws cloudformation describe-stack-resources --stack-name $STACK_NAME | jq -r '.StackResources[] | select(.ResourceType=="AWS::IAM::Role") | .PhysicalResourceId')
+echo "export ROLE_NAME=${ROLE_NAME}" | tee -a ~/.bash_profile
+```
 
+Deploy IAM policy by executing:
 ```
 mkdir ~/environment/asg_policy
 cat <<EoF > ~/environment/asg_policy/k8s-asg-policy.json

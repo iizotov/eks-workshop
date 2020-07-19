@@ -16,5 +16,13 @@ To test that your EKS cluster is up and running, execute
 ```bash
 kubectl get nodes
 ```
+You should see 3 workers with Status = Ready. 
 
-You should see 3 workers with Status = Ready. This concludes the prereqs section.
+As the final step, let's retrieve the IAM role CloudFormation deployed when provisioning your EKS cluster:
+```bash
+STACK_NAME=$(eksctl get nodegroup --cluster eksworkshop-eksctl -o json | jq -r '.[].StackName')
+ROLE_NAME=$(aws cloudformation describe-stack-resources --stack-name $STACK_NAME | jq -r '.StackResources[] | select(.ResourceType=="AWS::IAM::Role") | .PhysicalResourceId')
+echo "export ROLE_NAME=${ROLE_NAME}" | tee -a ~/.bash_profile
+```
+
+This concludes the prereqs section.
