@@ -8,6 +8,10 @@ pre: '<i class="fa fa-film" aria-hidden="true"></i> '
 
 ### Login to AWS Workshop Portal
 
+{{% notice info %}}
+You are attending an AWS event today. Should you choose to run this workshop in your own AWS account, please use the content from [https://eksworkshop.com/](https://eksworkshop.com/)
+{{% /notice %}}
+
 To proceed with this workshop, you will need the **Participant Hash** provided by the organisers.
 
 Connect to the portal by clicking the button or browsing to [https://dashboard.eventengine.run/](https://dashboard.eventengine.run/). The following screen shows up.
