@@ -6,21 +6,15 @@ weight: 32
 
 
 
-Create a CMK for the EKS cluster to use when encrypting your Kubernetes secrets:
+We have precreated a CMK key for the EKS cluster to use when encrypting your Kubernetes secrets, let's retrieve its ARN and store it as the `MASTER_ARN` environment variable and add it to our `bash_profile`
 ```bash
-aws kms create-alias --alias-name alias/eksworkshop --target-key-id $(aws kms create-key --query KeyMetadata.Arn --output text)
-```
-
-Let's retrieve the ARN of the CMK to input into the create cluster command.
-
-```bash
-export MASTER_ARN=$(aws kms describe-key --key-id alias/eksworkshop --query KeyMetadata.Arn --output text)
-```
-
-We set the MASTER_ARN environment variable to make it easier to refer to the KMS key later.
-
-Now, let's save the MASTER_ARN environment variable into the bash_profile
-
-```bash
+export MASTER_ARN=$(aws kms describe-key --key-id alias/eksworkshop2 --query KeyMetadata.Arn --output text)
 echo "export MASTER_ARN=${MASTER_ARN}" | tee -a ~/.bash_profile
 ```
+
+To test that your EKS cluster is up and running, execute
+```bash
+kubectl get nodes
+```
+
+You should see 3 workers with Status = Ready. This concludes the prereqs section.
