@@ -6,7 +6,7 @@ weight: 14
 
 -
 {{% notice info %}}
-Your environment today is set up  to run in the **Oregon (us-west-2)** region. **Please don't
+Your environment today is set up  to run in the **Ohio (us-east-2)** region. **Please don't
 switch regions.**
 {{% /notice %}}
 
