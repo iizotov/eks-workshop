@@ -30,11 +30,15 @@ export MASTER_ARN=$(aws kms describe-key --key-id alias/eksworkshop2 --query Key
 echo "export MASTER_ARN=${MASTER_ARN}" | tee -a ~/.bash_profile
 ```
 
-Let's retrieve the IAM role CloudFormation deployed when provisioning your EKS cluster:
+Let's retrieve the IAM role CloudFormation deployed when provisioning your EKS cluster and define bash function `yq` (similar to `jq` but for yaml):
 ```bash
 STACK_NAME=$(eksctl get nodegroup --cluster eksworkshop-eksctl -o json | jq -r '.[].StackName')
 ROLE_NAME=$(aws cloudformation describe-stack-resources --stack-name $STACK_NAME | jq -r '.StackResources[] | select(.ResourceType=="AWS::IAM::Role") | .PhysicalResourceId')
 echo "export ROLE_NAME=${ROLE_NAME}" | tee -a ~/.bash_profile
+
+echo 'yq() {
+  docker run --rm -i -v "${PWD}":/workdir mikefarah/yq yq "$@"
+}' | tee -a ~/.bashrc && source ~/.bashrc
 ```
 
 Now finally, let's test that your EKS cluster is up and running:
