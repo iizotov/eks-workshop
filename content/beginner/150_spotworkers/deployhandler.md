@@ -32,10 +32,11 @@ helm repo add eks https://aws.github.io/eks-charts
 
 helm upgrade --install aws-node-termination-handler \
              --namespace kube-system \
+             --set nodeSelector.lifecycle=Ec2Spot \
               eks/aws-node-termination-handler
 ```
 
-Verify that the pods are running on all nodes
+Verify that the pods are only running on node with label `lifecycle=Ec2Spot`
 ```bash
 kubectl --namespace=kube-system get daemonsets 
 ```

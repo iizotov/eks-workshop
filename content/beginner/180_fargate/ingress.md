@@ -10,10 +10,6 @@ draft: false
 The final step in exposing the 2048-game service through an ingress object. As we target Fargate pod IPs and not EC2 instances, we add an annotation to the ingress to specify the target-type.
 
 ```bash
-echo 'yq() {
-  docker run --rm -i -v "${PWD}":/workdir mikefarah/yq yq "$@"
-}' | tee -a ~/.bashrc && source ~/.bashrc
-
 curl -s https://raw.githubusercontent.com/kubernetes-sigs/aws-alb-ingress-controller/${ALB_INGRESS_VERSION}/docs/examples/2048/2048-ingress.yaml \
     | yq w  - 'metadata.annotations."alb.ingress.kubernetes.io/target-type"' ip \
     | kubectl apply -f -
